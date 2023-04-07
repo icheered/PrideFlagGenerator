@@ -11,9 +11,14 @@ trans,1,#FFFFFF
 trans,1,#F7A8B8
 trans,1,#55CDFC
 
+pansexual,1,#EA4788
+pansexual,1,#F7C659
+pansexual,1,#60B4EA
+
 nonbinary,1,#FFF430
 nonbinary,1,#FFFFFF
 nonbinary,1,#9C59D1
+nonbinary,1,#000000
 
 bisexual,2,#D60270
 bisexual,1,#9B4F96
@@ -27,3 +32,9 @@ asexual,1,#810081
 lesbian,1,#D52D00
 lesbian,1,#FF9B55
 lesbian,1,#FFFFFF
+lesbian,1,#D263A3
+lesbian,1,#A20F62
+
+dutch,1,#FF0000
+dutch,1,#FFFFFF
+dutch,1,#0000FF

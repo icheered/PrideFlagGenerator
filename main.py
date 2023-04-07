@@ -44,7 +44,7 @@ def main():
     config_file = "flags.csv"
     flag_definitions = read_config_file(config_file)
 
-    width = 255
+    width = 500
     height = 255
     for flag_definition in flag_definitions:
         generate_flag(flag_definition["name"], flag_definition["portions"], colors=flag_definition["colors"], width=width, height=height)
