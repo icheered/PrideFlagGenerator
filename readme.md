@@ -17,4 +17,4 @@ bisexual,2,#0038A8
 ```
 
 This will generate the following flag (dimensions are set in the code)
-![Dutch Pride flag](flags/dutch.png)
+![Bisexual Pride flag](flags/bisexual.png)
