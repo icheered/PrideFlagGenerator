@@ -23,8 +23,10 @@ def read_config_file(file_path):
 
         return result
 
+def generate_flag(name: str, portions: list, colors: list, width: int, height: int, magilight: bool = False):
+    if magilight:
+        width = 1
 
-def generate_flag(name: str, portions: list, colors: list, width: int, height: int):
     image = Image.new('RGB', (width, height))
     draw = ImageDraw.Draw(image)
 
@@ -36,9 +38,10 @@ def generate_flag(name: str, portions: list, colors: list, width: int, height: i
         draw.rectangle([(0, current_height), (width, current_height + portion_height)], fill=color)
         current_height += portion_height
 
-    image.save(f'flags/{name}.png')
-   
-
+    if magilight:
+        image.save(f'magilight/{name}.png')
+    else:
+        image.save(f'flags/{name}.png')
 
 def main():
     config_file = "flags.csv"
@@ -48,7 +51,7 @@ def main():
     height = 255
     for flag_definition in flag_definitions:
         generate_flag(flag_definition["name"], flag_definition["portions"], colors=flag_definition["colors"], width=width, height=height)
-
+        generate_flag(flag_definition["name"], flag_definition["portions"], colors=flag_definition["colors"], width=width, height=height, magilight=True)
 
 if __name__ == "__main__":
     main()
