@@ -25,21 +25,25 @@ def read_config_file(file_path):
 
 def generate_flag(name: str, portions: list, colors: list, width: int, height: int, magilight: bool = False):
     if magilight:
-        width = 1
+        height, width = 500, 144
 
     image = Image.new('RGB', (width, height))
     draw = ImageDraw.Draw(image)
 
     total_portions = sum(portions)
-    current_height = 0
+    current_width = 0
 
     for portion, color in zip(portions, colors):
-        portion_height = int(height * (portion / total_portions))
-        draw.rectangle([(0, current_height), (width, current_height + portion_height)], fill=color)
-        current_height += portion_height
+        portion_width = int(width * (portion / total_portions))
+        draw.rectangle([(current_width, 0), (current_width + portion_width, height)], fill=color)
+        current_width += portion_width
 
     if magilight:
-        image.save(f'magilight/{name}.png')
+        # Flip image
+        image = image.transpose(Image.FLIP_LEFT_RIGHT)
+        if(name == 'rainbow'): 
+            name = "Z_rainbow"
+        image.save(f'magilight/{name}.bmp', format = 'BMP')
     else:
         image.save(f'flags/{name}.png')
 
